@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simulação</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-default color">
+            <div class="container-fluid">
+                <div class="navbar-header">
+             
+                    <img class="logo" src="imagem.png" alt="logo">
+              
+                    <b href="#" class="navbar-brand">Tabela de Simulação</b>
+
+                    
+                </div>
+
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 teste tempo-simu-adjust">
+
+                    <div class="form-inline">
+                        <div class="form-group">
+                          <label for="inputTempo">Tempo da Simulação(min):</label>
+                          <input type="number" class="form-control" id="inputTempo" placeholder="Ex:60 min" value>
+                        </div>
+                    </div>
+
+
+
+                    <div class="tec">
+                        <fieldset>
+                            <legend>TEC</legend>
+
+                            <div class="form-inline">
+                                <div class="form-group">
+                                  <input type="number" class="form-control" id="inputTempoTec" placeholder="Digite">
+                                  <button class="btn color adjustec" onclick="addListaTec();">Adicionar TEC</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                        
+                        <div class="lista-tec lista">
+                            <ul>
+
+                            </ul>
+
+                            <div class="planta1"></div>
+                        </div>
+                    </div>
+
+                    <div class="ts">
+                        <fieldset>
+                            <legend>TS</legend>
+
+                            <div class="form-inline">
+                                <div class="form-group">
+                                  <input type="number" class="form-control" id="inputTempoTs" placeholder="Digite">
+                                  <button class="btn color" onclick="addListaTs();">Adicionar TS</button>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                         <div class="lista-ts lista">
+                            <ul>
+
+                            </ul>
+
+                            <div class="planta1"></div>
+                        </div>
+                    </div>
+
+                     <button class="btn btn-block color adjust-btn" onclick="simulacao();">Simular</button>
+
+                </div>
+
+
+                <div class="col-md-9 ">
+                    <table class="table table-bordered" id="tabela-simulacao">
+                        <thead class=color>
+                            <tr>
+                                <th> Cliente </th>
+                                <th> Tempo desde a última chegada(min) </th>
+                                <th> Tempo de Chegada no Relógio </th>
+                                <th> Tempo de Serviço(min) </th>
+                                <th> Tempo de inicio do Serviço no Relógio </th>
+                                <th> Tempo de Cliente na Fila(min) </th>
+                                <th> Tempo final do Serviço no Relógio </th>
+                                <th> Tempo do Cliente no Sistema(min) </th>
+                                <th> Tempo Livre do Operador(min) </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                        <tfoot>
+
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
