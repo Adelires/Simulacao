@@ -1,0 +1,126 @@
+
+.nav-custom, .btn-custom{
+  background-color: #008B8B;
+  box-shadow: 5px 3px 7px #2d2f2f;
+  color: #fff;
+}
+
+.navbar-header > h4 , .btn-custom{
+  color: #fff;
+}
+.cont-custom{
+  padding: 0;
+}
+
+.not-padding{
+  padding: 0;
+}
+
+#esquerda{
+  padding: 20px 0 0 30px;
+}
+
+.custom-table{
+  clear: both;
+  margin-bottom: 3%;
+}
+.btn-custom{
+  color:#fff;
+}
+
+.custom-table, custom-btn{
+    width: 68%;
+    margin-left: 4%;
+}
+
+#esquerda form>div{
+  margin: 5% 0 9% 4%;
+}
+
+#table-resposta{
+  margin-top: 15%;
+}
+
+.custom-table input[type="number"]{
+  width: 96px;
+}
+
+.text-align{
+  text-align: center;
+}
+
+.display-none{
+  display: none;
+}
+
+ #inputPessoa{
+  width: 90px;
+}
+
+#inputMin{
+  width: 107px;
+}
+
+#table-probabilidade{
+  clear: both;
+  margin: 5% 0 10% 0;
+
+}
+
+#table-probabilidade tr th{
+  background-color: #008b8b30;
+}
+
+#btn-enviar{
+  width: 66px;
+}
+
+#title {
+  font-size: 25px;
+  padding: 1% 0 0 0;
+  color:#394c4c;
+  margin-left: 73px;
+}
+
+img{
+  width: 60px;
+}
+
+#cenarios{
+  text-align: center;
+  background-color: #008b8b30;
+}
+
+.no-border{
+  border-top-color: #fff !important;
+  border-left-color: #fff !important;
+}
+
+#table-medias{
+      margin: 7% 0 12% 0;
+}
+
+.custom-footer{
+  height: 50px;
+  background-color: #394c4c;
+  box-shadow: 5px 3px 7px #2d2f2f;
+  color: #fff;
+  position:fixed;
+  bottom:0;
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 1%;
+}
+
+.custom-footer a{
+  color:#008b8b;
+}
+
+.row{
+  margin: 0;
+}
+
+.form-control-static{
+  font-size: 17px;
+}

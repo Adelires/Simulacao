@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title> </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="corpo.js"></script>
+
+  </head>
+
+  <body>
+      <div class="container-fluid cont-custom">
+          <nav class="navbar nav-custom">
+                <div class="container-fluid">
+                   <div class="navbar-header">
+                     <img src="imagem.png">
+                   </div>
+                  <div id="title">
+                       <p>Simulação - Teoria das filas </p>
+                  <div>
+                </div>
+          </nav>
+
+          <div class="row">
+
+            <div id="esquerda" class="col-md-6">
+                <form class="form-inline">
+
+                  <div class="form-group">
+                    <b class="form-control-static">Digite o tempo que deseja simular em min(s):</b>
+                  </div>
+
+                  <div class="form-group not-padding">
+                    <input type="number" class="form-control" id="inputMin" placeholder="Ex: 60 min" value>
+                  </div>
+
+                  </br>
+
+                  <table class="table custom-table ">
+                    <tr>
+                      <th> </th>
+                      <th class="text-align"> A </th>
+                      <th class="text-align"> B </th>
+                      <th class="text-align"> C </th>
+                    </tr>
+
+                    <tr>
+                      <th>Chegadas(&lambda;)</th>
+                      <td> <input type="number" id="chegada_A" value></td>
+                      <td> <input type="number" id="chegada_B" value> </td>
+                      <td> <input type="number" id="chegada_C" value> </td>
+                    </tr>
+                    <tr>
+                      <th>Serviço(&mu;)</th>
+                      <td> <input type="number" id="servico_A" value> </td>
+                      <td> <input type="number" id="servico_B" value> </td>
+                      <td> <input type="number" id="servico_C" value> </td>
+                    </tr>
+                  </table>
+
+                  <div id="custom-btn row">
+                    <div class="col-xs-2">
+                      <button type="button" class="btn btn-custom btn-block"  onclick="testarTabela()" >Teste</button>
+                    </div>
+                    <div class="col-xs-2">
+                      <button type="button" class="btn btn-custom btn-block"  onclick="limparTabela()" >Limpar</button>
+                    </div>
+                    <div class="col-xs-4">
+                      <button type="button" class="btn btn-custom btn-block"  onclick="montaTabela()" >Simular</button>
+                    </div>
+                  </div>
+                </form>
+
+                <table id="table-resposta" class="table custom-table table-bordered display-none">
+
+                  <tr>
+                    <td class="no-border"></td>
+                    <th colspan="3" id="cenarios">Cenários</td>
+                  </tr>
+                  <tr>
+                    <th> </th>
+                    <th class="text-align"> A </th>
+                    <th class="text-align"> B </th>
+                    <th class="text-align"> C </th>
+                  </tr>
+
+                  <tr>
+                    <th class="text-align">Chegadas(&lambda;)</th>
+                    <td> <h5 id="resp_chegada_A" class="text-align"></h5></td>
+                    <td> <h5 id="resp_chegada_B" class="text-align"></h5> </td>
+                    <td> <h5 id="resp_chegada_C" class="text-align"></h5> </td>
+                  </tr>
+                  <tr>
+                    <th class="text-align">Serviço(&mu;)</th>
+                    <td> <h5 id="resp_servico_A" class="text-align"></h5> </td>
+                    <td> <h5 id="resp_servico_B" class="text-align"></h5> </td>
+                    <td> <h5 id="resp_servico_C" class="text-align"></h5> </td>
+                  </tr>
+                </table>
+
+
+            </div>
+
+            <div id="direita" class="col-md-6">
+
+              <div>
+
+                <table id="table-medias" class="table custom-table table-bordered display-none">
+                  <tr>
+                    <td class="no-border"></td>
+                    <th colspan="3" id="cenarios">Cenários</td>
+                  </tr>
+
+                  <tr>
+                    <th> </th>
+                    <th class="text-align"> A </th>
+                    <th class="text-align"> B </th>
+                    <th class="text-align"> C </th>
+                  </tr>
+
+                  <tr>
+                    <th>Número Médio de Carros no Sistema (L)</th>
+                    <td> <h5 id="media_de_carros_A"></h5></td>
+                    <td> <h5 id="media_de_carros_B"></h5> </td>
+                    <td> <h5 id="media_de_carros_C"></h5> </td>
+                  </tr>
+                  <tr>
+                    <th>Tempo Médio Despendido no Sistema (W)</th>
+                    <td> <h5 id="tempo_medio_despendido_A"></h5> </td>
+                    <td> <h5 id="tempo_medio_despendido_B"></h5> </td>
+                    <td> <h5 id="tempo_medio_despendido_C"></h5> </td>
+                  </tr>
+
+                  <tr>
+                    <th>Taxa Média de Ocupação do Servidor (p)</th>
+                    <td> <h5 id="taxa_de_ocupacao_A"></h5> </td>
+                    <td> <h5 id="taxa_de_ocupacao_B"></h5> </td>
+                    <td> <h5 id="taxa_de_ocupacao_C"></h5> </td>
+                  </tr>
+                </table>
+
+
+              </div>
+
+                <form id="form-probabilidade" class="form-inline display-none">
+
+                  <div class="form-group">
+                    <p class="form-control-static">Probabilidade de Clientes(MAX):</p>
+                  </div>
+
+                  <div class="form-group not-padding">
+                    <input type="number" class="form-control" id="inputPessoa" placeholder="Ex: 5" value>
+                  </div>
+
+                  <div class="form-group">
+                    <button type="button" id="btn-enviar" class="btn btn-custom" onclick="montaTabelaProbabilidades();">Enviar</button>
+                  </div>
+                </form>
+
+                <table id="table-probabilidade" class="table custom-table table-bordered display-none">
+                  <tr>
+                    <th class="text-align"> N </th>
+                    <th class="text-align"> P(x) </th>
+                    <th class="text-align"> Cenário A </th>
+                    <th class="text-align"> Cenário B </th>
+                    <th class="text-align"> Cenário C </th>
+                  </tr>
+
+                  <tbody id="corpo-tabela">
+
+                  </tbody>
+
+                </table>
+            </div>
+          </div>
+      </div>
+  </body>
+
+</html>
